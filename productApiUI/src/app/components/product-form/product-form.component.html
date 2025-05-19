@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Edit Product' : 'Add Product' }}</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input class="form-control" formControlName="name" />
+      <div class="text-danger" *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <input class="form-control" formControlName="description" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" formControlName="price" />
+      <div class="text-danger" *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+        Price is required and must be 0 or more.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Quantity In Stock</label>
+      <input type="number" class="form-control" formControlName="quantityInStock" />
+      <div class="text-danger" *ngIf="productForm.get('quantityInStock')?.invalid && productForm.get('quantityInStock')?.touched">
+        Quantity is required and must be 0 or more.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <input class="form-control" formControlName="category" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Save</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="onCancel()">Cancel</button>
+  </form>
+</div>
+

@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <h2>Add Product</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name" />
+      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" formControlName="description"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" formControlName="price" />
+      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger">
+        Price must be 0 or more.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Quantity In Stock</label>
+      <input type="number" class="form-control" formControlName="quantityInStock" />
+      <div *ngIf="productForm.get('quantityInStock')?.invalid && productForm.get('quantityInStock')?.touched" class="text-danger">
+        Quantity must be 0 or more.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <input type="text" class="form-control" formControlName="category" />
+    </div>
+
+    <button  type="submit" [disabled]="productForm.invalid"class="btn btn-primary me-2">Add Product</button>
+
+    <button type="button" (click)="goBack()"class="btn btn-secondary me-2" >Back</button>
+  </form>
+</div>
