@@ -14,7 +14,7 @@ Make sure you have the following installed:
 - Node.js v22
 - .NET 9 SDK 
 - Angular 17 
-- MySQL Server
+- MSSQL Server
 
 ## Step 1: Configure the Backend
 
