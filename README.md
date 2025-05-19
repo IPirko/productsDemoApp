@@ -3,7 +3,7 @@ This is a full-stack demo application using:
 
 -  **.NET 9 Web API** (Backend)
 -  **Angular 17** (Frontend)
--  **MySQL** (Database)
+-  **MSSQL** (Database)
 -  **Bootstrap 5** (Styling)
 -  **Scalar** (API documentation)
 - (Optional) SQL Server Management Studio for inspecting the database
@@ -19,7 +19,7 @@ Make sure you have the following installed:
 ## Step 1: Configure the Backend
 
 1. Navigate to `ProductsApi/appsettings.json`
-2. Edit the connection string to match your MySQL setup:
+2. Edit the connection string to match your MSSQL setup:
 ```json
 "ConnectionStrings": {
   "DefaultConnection": "Server=localhost;Database=ProductsDb;User=root;Password=yourpassword;"
