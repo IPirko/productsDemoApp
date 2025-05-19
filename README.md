@@ -1,38 +1,50 @@
 # Products Demo Application ReadMe
+This is a full-stack demo application using:
 
-This application is created in .NET 9 WebApi, Angular for Frontend, MySQL for storing the data, and Bootstrap 5 for styling.  
-Application is separated into 2 parts: backend (.NET9) in folder "ProductsApi" and frontend (Angular) productApiUI. 
-Scalar for API documentation and testing the API request. 
+-  **.NET 9 Web API** (Backend)
+-  **Angular 17** (Frontend)
+-  **MySQL** (Database)
+-  **Bootstrap 5** (Styling)
+-  **Scalar** (API documentation)
+- (Optional) SQL Server Management Studio for inspecting the database
+---
 
-Before you build this application, you must have preinstalled Node v22, .NET 9 CLI, and Angular 17. 
- 
-The next step will be to specify your SQL "Server" in [text](ProductsApi/appsettings.json), and maybe if you like, change the name of the database.
- 
-## Step one: Start backend 
+Make sure you have the following installed:
 
-run this command from terminal in the [text](ProductsApi) dir, or from VSCode / VS studio.
+- Node.js v22
+- .NET 9 SDK 
+- Angular 17 
+- MySQL Server
 
->dotnet restore 
+## Step 1: Configure the Backend
 
->dotnet build 
+1. Navigate to `ProductsApi/appsettings.json`
+2. Edit the connection string to match your MySQL setup:
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost;Database=ProductsDb;User=root;Password=yourpassword;"
+}
+```
+## Step 2: Run the Backend
+```json
+cd ProductsApi
+dotnet restore
+dotnet build 
+dotnet run --urls "https://localhost:7227"
+```
+Check from your SQL Management Studio if the database/table was created.
 
->dotnet run --urls "https://localhost:7227"
+API will be available at: https://localhost:7227/api/product
 
- 
-After that, check from your SQL Management Studio if the database/table was created.
-You can also test it on this link empty JSON will be shown https://localhost:7227/api/product
-For documentation and testing, the Api request - https://localhost:7227/scalar/v1
+Scalar: https://localhost:7227/scalar/v1
 
+## Step 3: Run the Frontend
 
-## Step two: Start Frontend
+You need to run the next command from your VSCode or from your terminal: 
 
-You need to run the next command: 
-
->npm install
-
-
-To start the frontend Angular 
-
->ng serve
-
-On http://localhost:4200/, you can check the application. 
+```json
+cd productApiUI
+npm install
+ng serve 
+```
+App URL: http://localhost:4200
