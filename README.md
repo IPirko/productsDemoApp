@@ -26,7 +26,7 @@ Make sure you have the following installed:
 }
 ```
 ## Step 2: Run the Backend
-```json
+```
 cd ProductsApi
 dotnet restore
 dotnet build 
@@ -42,7 +42,7 @@ Scalar: https://localhost:7227/scalar/v1
 
 You need to run the next command from your VSCode or from your terminal: 
 
-```json
+```
 cd productApiUI
 npm install
 ng serve 
