@@ -10,11 +10,6 @@ namespace ProductsApi.Controllers
     {
         private readonly ProductDbContext _context = context;
 
-        //[HttpGet]
-        //public async Task<ActionResult<List<Products>>> GetProducts()
-        //{
-        //    return Ok(await _context.Products.ToListAsync());
-        //}
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Products>>> GetProducts([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {

@@ -58,10 +58,7 @@ export class ProductFormComponent implements OnInit{
           this.messageType = 'error';
           console.error(err);
         }  });
-    } else {
-        this.router.navigate(['/products'], {state: { message: 'Product!', messageType: 'success' }});
-      
-    }
+    } 
   }
   onCancel(): void {
     this.router.navigate(['/products']);
